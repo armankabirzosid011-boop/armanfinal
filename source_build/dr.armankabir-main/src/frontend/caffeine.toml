@@ -1,9 +1,2 @@
-manifest_version = "1.0.0"
-
-[project]
-name = "armanfinal-frontend"
-type = "static-react-assets"
-
-[build]
-commands = ["npm run build"]
-out = "dist"
+# Static React build configuration for cPanel.
+# Deploy the generated dist directory to public_html.

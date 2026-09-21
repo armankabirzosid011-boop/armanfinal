@@ -1,9 +1,2 @@
-manifest_version = "1.0.0"
-
-[project]
-id = "armanfinal-cpanel"
-name = "Dr. Arman Kabir Care"
-platform = "cPanel"
-frontend = "React"
-backend = "PHP REST API"
-database = "MySQL"
+# cPanel deployment metadata
+# React static assets + PHP REST API + MySQL database

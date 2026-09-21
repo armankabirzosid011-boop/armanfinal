@@ -1,144 +1,81 @@
 /**
- * Storage Adapter — thin wrapper around PHP API via apiClient
+ * Server API boundary.
  *
- * All data is now persisted server-side via the PHP/MySQL API.
- * This file provides the same exports that components expect,
- * but delegates reads/writes to the PHP backend using session-based auth.
- *
- * Usage:
- *   import { storage } from '../lib/storageAdapter';
- *   const lang = await storage.getItem('patient_language');
- *   await storage.setItem('sidebar_collapsed', 'true');
- *
- * Authentication: PHP session cookies (credentials: 'same-origin')
- * are auto-sent by the browser with the apiClient.
+ * Business/application data must use the domain services in ../services.
+ * This module only supports the small set of non-business user preferences
+ * that are backed by the PHP API. It never uses localStorage, IndexedDB, or
+ * browser-only persistence.
  */
 
 import { get, post } from './apiClient';
 
-// ─── Core storage wrapper ─────────────────────────────────────────────────────
+const preferenceKeyPattern = /^(patient_language|sidebar_collapsed|theme|ui_.*)$/;
+
+function assertPreferenceKey(key: string): void {
+  if (!preferenceKeyPattern.test(key)) {
+    throw new Error(`Unsupported client preference: ${key}`);
+  }
+}
 
 export const storage = {
-  // Get item from server-side storage
   async getItem(key: string): Promise<string | null> {
+    assertPreferenceKey(key);
     try {
-      const result: any = await get(`/storage/get.php?key=${encodeURIComponent(key)}`);
-      return result.success ? (result.data ?? null) : null;
+      const result = await get<{ value?: string | null }>('/preferences/get.php', { key });
+      return result?.value ?? null;
     } catch {
       return null;
     }
   },
 
-  // Set item on server-side storage
   async setItem(key: string, value: string): Promise<void> {
-    try {
-      await post('/storage/set.php', {
-        key,
-        value,
-      });
-    } catch (err) {
-      console.warn(`[StorageAdapter] Failed to set key "${key}":`, err);
-    }
+    assertPreferenceKey(key);
+    await post('/preferences/set.php', { key, value });
   },
 
-  // Remove item from server-side storage
   async removeItem(key: string): Promise<void> {
-    try {
-      await post('/storage/remove.php', {
-        key,
-      });
-    } catch (err) {
-      console.warn(`[StorageAdapter] Failed to remove key "${key}":`, err);
-    }
+    assertPreferenceKey(key);
+    await post('/preferences/remove.php', { key });
   },
 
-  // Clear all data for the current user
   async clear(): Promise<void> {
-    try {
-      await post('/storage/clear.php', {});
-    } catch (err) {
-      console.warn('[StorageAdapter] Failed to clear storage:', err);
-    }
+    await post('/preferences/clear.php', {});
   },
 
-  // Get the number of stored items for the current user
   async get length(): Promise<number> {
-    try {
-      const result: any = await get('/storage/length.php');
-      return result.success ? (result.data ?? 0) : 0;
-    } catch {
-      return 0;
-    }
+    const result = await get<{ count?: number }>('/preferences/count.php');
+    return result?.count ?? 0;
   },
 
-  // Get key by index from server-side storage
   async key(index: number): Promise<string | null> {
-    try {
-      const result: any = await get('/storage/key.php?index=' + index);
-      return result.success ? (result.data ?? null) : null;
-    } catch {
-      return null;
-    }
+    const result = await get<{ key?: string | null }>('/preferences/key.php', { index });
+    return result?.key ?? null;
   },
 };
 
-// ─── Convenience functions for common patterns ───────────────────────────────
-
-/**
- * Get a JSON-parsed item from server storage
- */
-export async function getJson<T = any>(key: string): Promise<T | null> {
+export async function getJson<T>(key: string): Promise<T | null> {
+  const raw = await storage.getItem(key);
+  if (raw === null) return null;
   try {
-    const result: any = await storage.getItem(key);
-    if (result === null) return null;
-    return JSON.parse(result) as T;
+    return JSON.parse(raw) as T;
   } catch {
     return null;
   }
 }
 
-/**
- * Set a JSON item to server storage
- */
-export async function setJson(key: string, data: unknown): Promise<void> {
-  try {
-    await storage.setItem(key, JSON.stringify(data));
-  } catch (err) {
-    console.warn(`[StorageAdapter] Failed to set JSON key "${key}":`, err);
-  }
+export function setJson(key: string, data: unknown): Promise<void> {
+  return storage.setItem(key, JSON.stringify(data));
 }
 
-/**
- * Get an item or return a default value
- */
-export async function getItemOr<T = any>(key: string, defaultValue: T): Promise<T> {
-  const result = await storage.getItem(key);
-  if (result === null) return defaultValue;
-  try {
-    return JSON.parse(result) as T;
-  } catch {
-    return defaultValue;
-  }
+export async function getItemOr<T>(key: string, defaultValue: T): Promise<T> {
+  const value = await getJson<T>(key);
+  return value === null ? defaultValue : value;
 }
 
-/**
- * Set an item as JSON, with error handling
- */
-export async function setItemJson(key: string, data: unknown): Promise<void> {
-  try {
-    await storage.setItem(key, JSON.stringify(data));
-  } catch (err) {
-    console.warn(`[StorageAdapter] Failed to set JSON key "${key}":`, err);
-  }
+export function setItemJson(key: string, data: unknown): Promise<void> {
+  return setJson(key, data);
 }
 
-/**
- * Remove item from server storage
- */
-export async function removeItemKey(key: string): Promise<void> {
-  try {
-    await storage.removeItem(key);
-  } catch (err) {
-    console.warn(`[StorageAdapter] Failed to remove key "${key}":`, err);
-  }
+export function removeItemKey(key: string): Promise<void> {
+  return storage.removeItem(key);
 }

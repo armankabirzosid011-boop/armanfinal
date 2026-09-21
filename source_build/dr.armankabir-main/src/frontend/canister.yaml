@@ -1,3 +1,2 @@
-# Deployment metadata for the standard cPanel stack.
-# Build the React assets and serve them from public_html.
-# API requests are sent to the PHP REST API under /api.
+# cPanel serves the React build as static assets.
+# Runtime requests go to the PHP REST API under /api.
