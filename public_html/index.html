@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. Arman Kabir Care</title>
+    <meta name="description" content="Dr. Arman Kabir Care — Bilingual Patient Management and Doctor Portal App for clinics and individual practitioners." />
+    <meta property="og:title" content="Dr. Arman Kabir Care" />
+    <meta property="og:description" content="Dr. Arman Kabir Care — Bilingual Patient Management and Doctor Portal App for clinics and individual practitioners." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <script>
+    // ─── localStorage health check ───────────────────────────────────────────
+    // Repairs corrupted JSON entries to prevent SyntaxError from JSON.parse
+    (function(){
+      try {
+        var keysToCheck = [
+          'siteConfig', 'doctorContentOverrides', 'staff_auth',
+          'medicare_doctors_registry', 'medicare_clinical_data',
+          'medicare_sync_queue', 'medicare_sync_conflicts',
+          'medicare_content_offline_queue', 'medicare_device_id'
+        ];
+        for (var i = 0; i < keysToCheck.length; i++) {
+          var raw = localStorage.getItem(keysToCheck[i]);
+          if (raw !== null && raw !== '') {
+            try { JSON.parse(raw); } catch(e) {
+              console.warn('[health] Removing corrupted localStorage key:', keysToCheck[i]);
+              localStorage.removeItem(keysToCheck[i]);
+            }
+          }
+        }
+        // Also scan all localStorage keys for JSON corruption
+        for (var j = 0; j < localStorage.length; j++) {
+          var k = localStorage.key(j);
+          if (k && (k.indexOf('_') !== -1 || k.indexOf('medicare_') === 0 || k.indexOf('clinic_') === 0 || k.indexOf('visit_') === 0 || k.indexOf('appointments') === 0 || k.indexOf('patients_') === 0 || k.indexOf('prescriptions_') === 0)) {
+            try {
+              var v = localStorage.getItem(k);
+              if (v !== null && v !== '') {
+                JSON.parse(v);
+              }
+            } catch(e) {
+              console.warn('[health] Removing corrupted localStorage key:', k);
+              localStorage.removeItem(k);
+            }
+          }
+        }
+      } catch(e) { /* localStorage not available */ }
+    })();
+    // ─── Preload frontpage content from server into localStorage ────────────
+    (function(){
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', '/api/frontpage/get.php', true);
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          try {
+            var json = JSON.parse(xhr.responseText);
+            if (json.success && json.data) {
+              if (json.data.siteConfig) localStorage.setItem('siteConfig', JSON.stringify(json.data.siteConfig));
+              if (json.data.doctorContentOverrides) localStorage.setItem('doctorContentOverrides', JSON.stringify(json.data.doctorContentOverrides));
+            }
+          } catch(e) { console.warn('[preload] parse error:', e); }
+        }
+      };
+      xhr.onerror = function() { /* silently fail */ };
+      xhr.send();
+    })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-DJeWhCy-.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-JEdqxkTH.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Register Service Worker — silent updates, no forced reloads to avoid React removeChild errors
+      if ('serviceWorker' in navigator) {
+        // Defer reload to avoid interrupting React's unmount lifecycle
+        let reloadScheduled = false;
+        const scheduleReload = () => {
+          if (reloadScheduled) return;
+          reloadScheduled = true;
+          setTimeout(function() { window.location.reload(); }, 500);
+        };
+
+        navigator.serviceWorker.register('/sw.js', { scope: '/' }).then(function(reg) {
+          reg.addEventListener('updatefound', function() {
+            var newWorker = reg.installing;
+            newWorker.addEventListener('statechange', function() {
+              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                scheduleReload();
+              }
+            });
+          });
+
+          if (reg.waiting && navigator.serviceWorker.controller) {
+            scheduleReload();
+          }
+        }).catch(function() {
+          // SW registration failed silently — app still works without it
+        });
+
+        navigator.serviceWorker.addEventListener('controllerchange', function() {
+          scheduleReload();
+        });
+      }
+    </script>
+  </body>
+</html>

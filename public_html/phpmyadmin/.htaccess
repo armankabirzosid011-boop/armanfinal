@@ -1,0 +1,20 @@
+# Protect phpMyAdmin with password
+AuthType Basic
+AuthName "Restricted Access - phpMyAdmin"
+AuthUserFile /home/drarmank/.htpasswd-phpmyadmin
+Require valid-user
+
+# Deny access to setup directory
+<FilesMatch "setup/">
+    Require all denied
+</FilesMatch>
+
+# Deny access to config files
+<FilesMatch "config\.(php|inc)">
+    Require all denied
+</FilesMatch>
+
+# Deny access to vendor directory
+<Files ~ "^vendor/">
+    Require all denied
+</Files>

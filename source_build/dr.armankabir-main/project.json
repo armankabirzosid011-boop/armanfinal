@@ -1,0 +1,29 @@
+{
+  "overview": "Dr. Arman Kabir's Care is a comprehensive bilingual (English/Bangla) patient management and doctor portal for clinics and hospitals, covering OPD and IPD workflows, prescriptions, ward rounds, hospital management, and a public landing page.",
+  "features": [
+    "9-role authentication (Admin, Consultant, MO, Intern, Nurse, Registrar, Reception, Patient and more) with role-based dashboards",
+    "Patient registration with 17-tab profile (vitals, prescriptions, SOAP notes, investigations, appointments, timeline, chat, and more)",
+    "Daily ward rounds with 3-step SOAP flow (Intern draft → MO review → Consultant finalization)",
+    "Bed management with typed beds (ICU/HDU/Cabin), reservation expiry timer, and discharge checklist",
+    "Hospital payments with 5 tabs, invoice-before-payment, revenue charts, WhatsApp invoice sharing",
+    "Investigation payment with walk-in form, rate.csv upload, and downloadable branded receipts",
+    "Clinical alerts (Sepsis, AKI, NEWS2, hypoglycemia) auto-calculated from vitals",
+    "Fully admin-editable public landing page with interactive clinic maps, appointment booking, and bilingual toggle",
+    "Educational classroom with Announcements, Lecture Notes, Video Lectures, and Picture Gallery tabs",
+    "Offline-first with canister cloud sync, build-time canister ID embedding for reliable Vercel deployments"
+  ],
+  "category": "healthcare-app",
+  "tags": [
+    "healthcare",
+    "clinical",
+    "hospital",
+    "patient-management",
+    "bilingual",
+    "pwa",
+    "bangla",
+    "emr",
+    "ward-round",
+    "appointments"
+  ],
+  "last_updated": "2026-06-02T14:02:28.606Z"
+}

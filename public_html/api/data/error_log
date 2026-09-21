@@ -1,0 +1,4 @@
+[14-Jul-2026 18:20:28 UTC] PHP Warning:  Constant API_URL already defined in /home/drarmank/public_html/config.php on line 58
+[14-Jul-2026 18:20:28 UTC] PHP Warning:  Constant JWT_SECRET already defined in /home/drarmank/public_html/config.php on line 61
+[14-Jul-2026 18:20:34 UTC] PHP Warning:  Constant API_URL already defined in /home/drarmank/public_html/config.php on line 58
+[14-Jul-2026 18:20:34 UTC] PHP Warning:  Constant JWT_SECRET already defined in /home/drarmank/public_html/config.php on line 61

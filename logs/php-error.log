@@ -1,0 +1,181 @@
+[12-Jul-2026 23:33:01 Asia/Dhaka] Database connection failed: SQLSTATE[HY000] [1045] Access denied for user 'drarmank_care_user'@'localhost' (using password: NO)
+[12-Jul-2026 23:33:41 Asia/Dhaka] Database connection failed: SQLSTATE[28000] [1045] Access denied for user 'drarmank_care_user'@'localhost' (using password: NO)
+[12-Jul-2026 23:34:14 Asia/Dhaka] Database connection failed: SQLSTATE[28000] [1045] Access denied for user 'drarmank_care_user'@'localhost' (using password: NO)
+[13-Jul-2026 01:12:12 Asia/Dhaka] Database connection failed: SQLSTATE[28000] [1045] Access denied for user 'drarmank_care_user'@'localhost' (using password: NO)
+[13-Jul-2026 01:51:25 Asia/Dhaka] Create appointment error: SQLSTATE[HY093]: Invalid parameter number
+[13-Jul-2026 01:51:26 Asia/Dhaka] Create visit error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`visits`, CONSTRAINT `visits_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE)
+[13-Jul-2026 01:51:26 Asia/Dhaka] Create prescription error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`prescriptions`, CONSTRAINT `prescriptions_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE)
+[13-Jul-2026 01:51:26 Asia/Dhaka] Create clinical note error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`clinical_notes`, CONSTRAINT `clinical_notes_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE)
+[13-Jul-2026 01:51:26 Asia/Dhaka] Create payment error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`payments`, CONSTRAINT `payments_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE SET NULL)
+[13-Jul-2026 01:51:26 Asia/Dhaka] Create invoice error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`invoices`, CONSTRAINT `invoices_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE)
+[13-Jul-2026 01:51:26 Asia/Dhaka] Create notification error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`notifications`, CONSTRAINT `notifications_ibfk_2` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE SET NULL)
+[13-Jul-2026 01:54:33 Asia/Dhaka] Audit log failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`audit_logs`, CONSTRAINT `audit_logs_ibfk_2` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE SET NULL)
+[13-Jul-2026 01:54:33 Asia/Dhaka] Create appointment error: SQLSTATE[HY093]: Invalid parameter number
+[13-Jul-2026 01:54:33 Asia/Dhaka] List vitals error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'v.created_at' in 'ORDER BY'
+[13-Jul-2026 02:21:03 Asia/Dhaka] Create patient error: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'REG-202607-0002' for key 'register_number'
+[13-Jul-2026 02:21:03 Asia/Dhaka] Create appointment error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`appointments`, CONSTRAINT `appointments_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE SET NULL)
+[13-Jul-2026 02:21:03 Asia/Dhaka] Create visit error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`visits`, CONSTRAINT `visits_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE)
+[13-Jul-2026 02:21:03 Asia/Dhaka] Create prescription error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`prescriptions`, CONSTRAINT `prescriptions_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE)
+[13-Jul-2026 02:21:04 Asia/Dhaka] Create vitals error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`vital_signs`, CONSTRAINT `vital_signs_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE)
+[13-Jul-2026 02:21:04 Asia/Dhaka] Create clinical note error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`clinical_notes`, CONSTRAINT `clinical_notes_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE)
+[13-Jul-2026 02:21:04 Asia/Dhaka] Create payment error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`payments`, CONSTRAINT `payments_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE SET NULL)
+[13-Jul-2026 02:21:04 Asia/Dhaka] Create invoice error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`invoices`, CONSTRAINT `invoices_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE)
+[13-Jul-2026 02:21:04 Asia/Dhaka] Create notification error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`notifications`, CONSTRAINT `notifications_ibfk_2` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE SET NULL)
+[13-Jul-2026 02:21:29 Asia/Dhaka] Audit log failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`audit_logs`, CONSTRAINT `audit_logs_ibfk_2` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE SET NULL)
+[13-Jul-2026 02:21:40 Asia/Dhaka] Create patient error: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'REG-202607-0002' for key 'register_number'
+[13-Jul-2026 02:21:40 Asia/Dhaka] Create appointment error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`appointments`, CONSTRAINT `appointments_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE SET NULL)
+[13-Jul-2026 02:21:40 Asia/Dhaka] Create visit error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`visits`, CONSTRAINT `visits_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE)
+[13-Jul-2026 02:21:40 Asia/Dhaka] Create prescription error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`prescriptions`, CONSTRAINT `prescriptions_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE)
+[13-Jul-2026 02:21:40 Asia/Dhaka] Create vitals error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`vital_signs`, CONSTRAINT `vital_signs_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE)
+[13-Jul-2026 02:21:40 Asia/Dhaka] Create clinical note error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`clinical_notes`, CONSTRAINT `clinical_notes_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE)
+[13-Jul-2026 02:21:40 Asia/Dhaka] Create payment error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`payments`, CONSTRAINT `payments_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE SET NULL)
+[13-Jul-2026 02:21:40 Asia/Dhaka] Create invoice error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`invoices`, CONSTRAINT `invoices_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE)
+[13-Jul-2026 02:21:40 Asia/Dhaka] Create notification error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`notifications`, CONSTRAINT `notifications_ibfk_2` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE SET NULL)
+[13-Jul-2026 02:34:01 Asia/Dhaka] Audit log failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`audit_logs`, CONSTRAINT `audit_logs_ibfk_2` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE SET NULL)
+[13-Jul-2026 02:34:14 Asia/Dhaka] Audit log failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`audit_logs`, CONSTRAINT `audit_logs_ibfk_2` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE SET NULL)
+[14-Jul-2026 01:16:41 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`site_settings`, CONSTRAINT `site_settings_ibfk_1` FOREIGN KEY (`updated_by`) REFERENCES `users` (`id`) ON DELETE SET NULL) in Command line code:23
+Stack trace:
+#0 Command line code(23): PDOStatement->execute(Array)
+#1 {main}
+  thrown in Command line code on line 23
+[14-Jul-2026 01:37:51 Asia/Dhaka] PHP Warning:  Cannot modify header information - headers already sent by (output started at Command line code:13) in /home/drarmank/public_html/api/helpers.php on line 14
+[14-Jul-2026 01:37:57 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`site_settings`, CONSTRAINT `site_settings_ibfk_1` FOREIGN KEY (`updated_by`) REFERENCES `users` (`id`) ON DELETE SET NULL) in Command line code:11
+Stack trace:
+#0 Command line code(11): PDOStatement->execute(Array)
+#1 {main}
+  thrown in Command line code on line 11
+[15-Jul-2026 01:01:18 Asia/Dhaka] PHP Warning:  Undefined array key "REQUEST_METHOD" in /home/drarmank/public_html/api/helpers.php on line 269
+[15-Jul-2026 01:01:18 Asia/Dhaka] PHP Warning:  Undefined array key "REQUEST_METHOD" in /home/drarmank/public_html/api/helpers.php on line 65
+[15-Jul-2026 01:01:18 Asia/Dhaka] PHP Fatal error:  Uncaught TypeError: getMethod(): Return value must be of type string, null returned in /home/drarmank/public_html/api/helpers.php:65
+Stack trace:
+#0 /home/drarmank/public_html/api/helpers.php(69): getMethod()
+#1 /home/drarmank/public_html/api/frontpage/get.php(21): requireMethod('GET')
+#2 {main}
+  thrown in /home/drarmank/public_html/api/helpers.php on line 65
+[15-Jul-2026 01:01:21 Asia/Dhaka] PHP Warning:  Undefined array key "REQUEST_METHOD" in /home/drarmank/public_html/api/helpers.php on line 269
+[15-Jul-2026 01:01:21 Asia/Dhaka] PHP Warning:  Undefined array key "REQUEST_METHOD" in /home/drarmank/public_html/api/helpers.php on line 65
+[15-Jul-2026 01:01:21 Asia/Dhaka] PHP Fatal error:  Uncaught TypeError: getMethod(): Return value must be of type string, null returned in /home/drarmank/public_html/api/helpers.php:65
+Stack trace:
+#0 /home/drarmank/public_html/api/helpers.php(69): getMethod()
+#1 /home/drarmank/public_html/api/frontpage/get.php(21): requireMethod('GET')
+#2 {main}
+  thrown in /home/drarmank/public_html/api/helpers.php on line 65
+[15-Jul-2026 01:01:25 Asia/Dhaka] PHP Warning:  Undefined array key "REQUEST_METHOD" in /home/drarmank/public_html/api/helpers.php on line 269
+[15-Jul-2026 01:01:25 Asia/Dhaka] PHP Warning:  Undefined array key "REQUEST_METHOD" in /home/drarmank/public_html/api/helpers.php on line 65
+[15-Jul-2026 01:01:25 Asia/Dhaka] PHP Fatal error:  Uncaught TypeError: getMethod(): Return value must be of type string, null returned in /home/drarmank/public_html/api/helpers.php:65
+Stack trace:
+#0 /home/drarmank/public_html/api/helpers.php(69): getMethod()
+#1 /home/drarmank/public_html/api/frontpage/get.php(21): requireMethod('GET')
+#2 {main}
+  thrown in /home/drarmank/public_html/api/helpers.php on line 65
+[17-Jul-2026 18:29:46 Asia/Dhaka] Database connection failed: SQLSTATE[08004] [1040] Too many connections
+[17-Jul-2026 18:29:47 Asia/Dhaka] Database connection failed: SQLSTATE[08004] [1040] Too many connections
+[17-Jul-2026 18:29:47 Asia/Dhaka] Database connection failed: SQLSTATE[HY000] [1040] Too many connections
+[19-Jul-2026 08:09:43 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[19-Jul-2026 08:09:43 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[19-Jul-2026 08:09:43 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[19-Jul-2026 08:09:43 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[19-Jul-2026 20:56:50 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[19-Jul-2026 20:56:50 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[19-Jul-2026 20:56:50 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[19-Jul-2026 20:56:51 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 07:13:01 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 07:13:05 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 10:53:03 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 10:53:08 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 10:53:08 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 10:53:08 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 10:53:09 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 10:53:10 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 11:43:44 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 11:43:48 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 11:43:49 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 11:43:49 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 11:43:49 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 11:43:49 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 11:44:30 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 11:45:34 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 11:45:34 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 11:45:34 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 11:45:35 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 11:45:35 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 20:00:21 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 20:00:22 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 20:00:22 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 20:00:22 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 20:00:22 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 20:01:31 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 20:01:48 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 20:04:02 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token "," in /home/drarmank/public_html/api/helpers.php on line 80
+[20-Jul-2026 20:28:45 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token ")" in /home/drarmank/public_html/api/helpers.php on line 86
+[20-Jul-2026 20:28:45 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token ")" in /home/drarmank/public_html/api/helpers.php on line 86
+[20-Jul-2026 20:28:45 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token ")" in /home/drarmank/public_html/api/helpers.php on line 86
+[20-Jul-2026 20:28:45 Asia/Dhaka] PHP Parse error:  syntax error, unexpected token ")" in /home/drarmank/public_html/api/helpers.php on line 86
+[21-Jul-2026 16:54:01 Asia/Dhaka] Audit log failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`audit_logs`, CONSTRAINT `audit_logs_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL)
+[22-Jul-2026 00:16:34 Asia/Dhaka] Audit log failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`drarmank_drarmank_care`.`audit_logs`, CONSTRAINT `audit_logs_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL)
+[24-Jul-2026 20:55:11 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'drarmank_drarmank_care.admin_sessions' doesn't exist in Command line code:9
+Stack trace:
+#0 Command line code(9): PDO->query()
+#1 {main}
+  thrown in Command line code on line 9
+[27-Jul-2026 00:30:37 Asia/Dhaka] Database connection failed: SQLSTATE[08004] [1040] Too many connections
+[22-Aug-2026 00:34:23 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Undefined constant "PDO_ASSOC" in Command line code:5
+Stack trace:
+#0 {main}
+  thrown in Command line code on line 5
+[22-Aug-2026 00:34:54 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined method PDO::describe() in Command line code:5
+Stack trace:
+#0 {main}
+  thrown in Command line code on line 5
+[23-Aug-2026 23:24:22 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function successResponse() in /home/drarmank/public_html/api/config/env.php:55
+Stack trace:
+#0 {main}
+  thrown in /home/drarmank/public_html/api/config/env.php on line 55
+[23-Aug-2026 23:24:26 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function successResponse() in /home/drarmank/public_html/api/config/env.php:55
+Stack trace:
+#0 {main}
+  thrown in /home/drarmank/public_html/api/config/env.php on line 55
+[23-Aug-2026 23:24:30 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function successResponse() in /home/drarmank/public_html/api/config/env.php:55
+Stack trace:
+#0 {main}
+  thrown in /home/drarmank/public_html/api/config/env.php on line 55
+[23-Aug-2026 23:24:34 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function successResponse() in /home/drarmank/public_html/api/config/env.php:55
+Stack trace:
+#0 {main}
+  thrown in /home/drarmank/public_html/api/config/env.php on line 55
+[23-Aug-2026 23:24:51 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function successResponse() in /home/drarmank/public_html/api/config/env.php:55
+Stack trace:
+#0 {main}
+  thrown in /home/drarmank/public_html/api/config/env.php on line 55
+[23-Aug-2026 23:24:55 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function successResponse() in /home/drarmank/public_html/api/config/env.php:55
+Stack trace:
+#0 {main}
+  thrown in /home/drarmank/public_html/api/config/env.php on line 55
+[23-Aug-2026 23:51:28 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Class "Response" not found in /home/drarmank/public_html/api/config/env.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/drarmank/public_html/api/config/env.php on line 45
+[23-Aug-2026 23:51:54 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Class "Response" not found in /home/drarmank/public_html/api/config/env.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/drarmank/public_html/api/config/env.php on line 45
+[23-Aug-2026 23:53:11 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Class "Response" not found in /home/drarmank/public_html/api/config/env.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/drarmank/public_html/api/config/env.php on line 45
+[23-Aug-2026 23:55:39 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Class "Response" not found in /home/drarmank/public_html/api/config/env.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/drarmank/public_html/api/config/env.php on line 45
+[23-Aug-2026 23:58:42 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Class "Response" not found in /home/drarmank/public_html/api/config/env.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/drarmank/public_html/api/config/env.php on line 45
+[23-Aug-2026 23:59:20 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Class "Response" not found in /home/drarmank/public_html/api/config/env.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/drarmank/public_html/api/config/env.php on line 45
+[23-Aug-2026 23:59:44 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Class "Response" not found in /home/drarmank/public_html/api/config/env.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/drarmank/public_html/api/config/env.php on line 45

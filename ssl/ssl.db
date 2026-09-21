@@ -1,0 +1,51 @@
+---
+files:
+  certificate:
+    _wildcard__drarmankabir_com_c6910_5274d_1794858655_8e10bb65321954c31c4415e3cd1c0fb3:
+      created: '1787086170'
+      domains:
+        - "*.drarmankabir.com"
+        - drarmankabir.com
+      ecdsa_curve_name: ~
+      ecdsa_public: ~
+      friendly_name: Cert for “drarmankabir.com”
+      id: _wildcard__drarmankabir_com_c6910_5274d_1794858655_8e10bb65321954c31c4415e3cd1c0fb3
+      is_self_signed: 0
+      issuer.commonName: YR1
+      issuer.organizationName: Let's Encrypt
+      key_algorithm: rsaEncryption
+      modulus: c69105acd66f69b921390ce2e8b131fc6a29666ca608f2af511d8405298e03449b6f7a0e70d6c5b310fb560d9618a9d4f9d36eff412a2375db83915c6fadcbec98398ea2346c3c09468ac0e8900dcd31b888a09611493156288142b91df6b1626140071654dbfa2de6df7e3bf9a207a84e31af9a7bd6a00491719690ceb5dad748025a8b0e6d3496dd5c829226620f28d714ac6960329e033a6af71cc28d79ddba2edc45a4fbdaf4b88c83b7e55eca08c0fd68f106a0271c0a59c829dc79e0639b027e66e30cc1cfe1621da344a451e5e9ad40e055f4a3783c46f71f310f7116905714c91c139e1fc716762380629e28189902890c95d0bcc2b5fb350405274d
+      modulus_length: 2048
+      not_after: '1794858655'
+      not_before: '1787082656'
+      serial: 06ac52190e641239054ea09e9462665ac08c
+      signature_algorithm: sha256WithRSAEncryption
+      subject.commonName: "*.drarmankabir.com"
+      validation_type: dv
+  key:
+    c6910_5274d_90126c75f3ca56bce320769257232f87:
+      created: '1787086170'
+      ecdsa_curve_name: ~
+      ecdsa_public: ~
+      friendly_name: Key for “drarmankabir.com”
+      id: c6910_5274d_90126c75f3ca56bce320769257232f87
+      key_algorithm: rsaEncryption
+      modulus: c69105acd66f69b921390ce2e8b131fc6a29666ca608f2af511d8405298e03449b6f7a0e70d6c5b310fb560d9618a9d4f9d36eff412a2375db83915c6fadcbec98398ea2346c3c09468ac0e8900dcd31b888a09611493156288142b91df6b1626140071654dbfa2de6df7e3bf9a207a84e31af9a7bd6a00491719690ceb5dad748025a8b0e6d3496dd5c829226620f28d714ac6960329e033a6af71cc28d79ddba2edc45a4fbdaf4b88c83b7e55eca08c0fd68f106a0271c0a59c829dc79e0639b027e66e30cc1cfe1621da344a451e5e9ad40e055f4a3783c46f71f310f7116905714c91c139e1fc716762380629e28189902890c95d0bcc2b5fb350405274d
+      modulus_length: 2048
+indexes:
+  certificate:
+    modulus:
+      c69105acd66f69b921390ce2e8b131fc6a29666ca608f2af511d8405298e03449b6f7a0e70d6c5b310fb560d9618a9d4f9d36eff412a2375db83915c6fadcbec98398ea2346c3c09468ac0e8900dcd31b888a09611493156288142b91df6b1626140071654dbfa2de6df7e3bf9a207a84e31af9a7bd6a00491719690ceb5dad748025a8b0e6d3496dd5c829226620f28d714ac6960329e033a6af71cc28d79ddba2edc45a4fbdaf4b88c83b7e55eca08c0fd68f106a0271c0a59c829dc79e0639b027e66e30cc1cfe1621da344a451e5e9ad40e055f4a3783c46f71f310f7116905714c91c139e1fc716762380629e28189902890c95d0bcc2b5fb350405274d:
+        _wildcard__drarmankabir_com_c6910_5274d_1794858655_8e10bb65321954c31c4415e3cd1c0fb3: ~
+    subject.commonName:
+      "*.drarmankabir.com":
+        _wildcard__drarmankabir_com_c6910_5274d_1794858655_8e10bb65321954c31c4415e3cd1c0fb3: ~
+uniques:
+  certificate:
+    friendly_name:
+      Cert for “drarmankabir.com”: _wildcard__drarmankabir_com_c6910_5274d_1794858655_8e10bb65321954c31c4415e3cd1c0fb3
+  key:
+    friendly_name:
+      Key for “drarmankabir.com”: c6910_5274d_90126c75f3ca56bce320769257232f87
+    modulus:ecdsa_curve_name:ecdsa_public:
+      c69105acd66f69b921390ce2e8b131fc6a29666ca608f2af511d8405298e03449b6f7a0e70d6c5b310fb560d9618a9d4f9d36eff412a2375db83915c6fadcbec98398ea2346c3c09468ac0e8900dcd31b888a09611493156288142b91df6b1626140071654dbfa2de6df7e3bf9a207a84e31af9a7bd6a00491719690ceb5dad748025a8b0e6d3496dd5c829226620f28d714ac6960329e033a6af71cc28d79ddba2edc45a4fbdaf4b88c83b7e55eca08c0fd68f106a0271c0a59c829dc79e0639b027e66e30cc1cfe1621da344a451e5e9ad40e055f4a3783c46f71f310f7116905714c91c139e1fc716762380629e28189902890c95d0bcc2b5fb350405274d: c6910_5274d_90126c75f3ca56bce320769257232f87

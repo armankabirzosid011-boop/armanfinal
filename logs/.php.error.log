@@ -1,0 +1,2 @@
+[21-Sep-2026 11:31:37 Asia/Dhaka] PHP Deprecated:  session_set_save_handler(): Providing individual callbacks instead of an object implementing SessionHandlerInterface is deprecated in /usr/local/cpanel/base/3rdparty/roundcube/program/lib/Roundcube/rcube_session.php on line 119
+[21-Sep-2026 11:31:37 Asia/Dhaka] PHP Warning:  touch(): Unable to create file /home/drarmank/etc/drarmank.rcube.db because No such file or directory in /usr/local/cpanel/base/3rdparty/roundcube/program/lib/Roundcube/db/sqlite.php on line 39

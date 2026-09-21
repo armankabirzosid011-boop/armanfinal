@@ -1,0 +1,5 @@
+[18-Jul-2026 12:56:02 UTC] PHP Warning:  Undefined variable $code in Command line code on line 2
+[18-Jul-2026 12:56:29 UTC] PHP Parse error:  syntax error, unexpected token ";" in migrate-storage.php on line 32
+[18-Jul-2026 12:57:00 UTC] PHP Parse error:  syntax error, unexpected token ";" in migrate-storage.php on line 32
+[18-Jul-2026 13:01:21 UTC] PHP Parse error:  syntax error, unexpected token ";" in Command line code on line 30
+[18-Jul-2026 13:01:49 UTC] PHP Parse error:  syntax error, unexpected token ";" in Command line code on line 6

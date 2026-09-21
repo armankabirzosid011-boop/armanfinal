@@ -1,0 +1,30 @@
+# cPanel Deployment Configuration
+# This file configures the application for deployment on cPanel hosting
+
+domain: yourdomain.com
+app_name: drarmankabir-care
+app_type: nodejs
+node_version: "20.x"
+
+# Build configuration
+build:
+  script: "cd src/frontend && pnpm install --prefer-offline && pnpm build"
+  output_directory: "src/frontend/dist"
+  install_script: "pnpm install --prefer-offline"
+
+# Environment configuration
+environment:
+  NODE_ENV: production
+  PORT: 3000
+
+# File routing (SPA configuration)
+routing:
+  rewrites:
+    - source: "/(.*)"
+      destination: "/index.html"
+
+# cPanel specific settings
+cpanel:
+  addon_domain: false
+  public_html: true
+  ssl_required: true
