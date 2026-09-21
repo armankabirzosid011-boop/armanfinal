@@ -1,11 +1,11 @@
 manifest_version = "0.1.0"
 
 [project]
-id = "my-app"
-name = "my-app"
+id = "php-mysql-frontend"
+name = "Dr. Arman Kabir Care"
 
 [workspace]
 include = ["src/**"]
 
-[canisters.frontend]
-depends_on = ["backend"]
+# This project is deployed to cPanel with PHP/MySQL.
+# No ICP canisters or Caffeine runtime are used.
