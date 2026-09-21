@@ -21,7 +21,7 @@ const __iconNode = [
   [
     "path",
     {
-      d: "M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z",
+      d: "M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.16a2.123 2.123 0 0 0-1.976 0l-4.618 2.16a.53.53 0 0 1-.771-.56l.882-5.14a2.123 2.123 0 0 0-.611-1.878l-3.736-3.638a.53.53 0 0 1 .294-.904l5.166-.756a2.123 2.123 0 0 0 1.595-1.16l2.31-4.679Z",
       key: "r04s7s"
     }
   ]
@@ -55,7 +55,7 @@ const doctors = {
       {
         id: "1",
         nameBn: "ইউনিভার্সিটি ডেন্টাল কলেজ এন্ড হাসপাতাল",
-        addressBn: "নিচ তলা (সেন্চুরি আর্কেড মার্কেট)\n১২০/এ, আউটার সার্কুলার রোড\nমগবাজার, ঢাকা",
+        addressBn: "নিচ তলা (সেনচুরি আর্কেড মার্কেট)\n১২০/এ, আউটার সার্কুলার রোড\nমগবাজার, ঢাকা",
         address: "University Dental College & Hospital, Ground Floor (Century Arcade Market), 120/A, Outer Circular Road, Moghbazar, Dhaka",
         visitingHours: "Saturday–Thursday: 5:00 PM – 9:00 PM",
         phone: "01751959262",
@@ -164,10 +164,10 @@ const doctors = {
     roles: ["FCPS Part 2 Trainee, Dept. of Gynae & Obs, Dhaka Medical College"],
     regNo: "",
     hospital: "Dhaka Medical College",
-    phone: ,
+    phone: "",
     phone2: "",
     email: "samiashikder33@gmail.com",
-    whatsapp: ,
+    whatsapp: "",
     photo: null,
     cvPdfUrl: "/assets/uploads/CV_Samia-Shikder-16.3.2026-1.pdf",
     chambers: [
@@ -177,8 +177,8 @@ const doctors = {
         addressBn: "গাইনী ও প্রসূতি বিভাগ\nঢাকা মেডিকেল কলেজ হাসপাতাল\nঢাকা",
         address: "Dept. of Gynae & Obs, Dhaka Medical College Hospital, Dhaka",
         visitingHours: "Sunday–Thursday: 4:00 PM – 8:00 PM",
-        phone: ,
-        emergencyPhone: ,
+        phone: "",
+        emergencyPhone: "",
         lat: 23.7261,
         lng: 90.396
       }
