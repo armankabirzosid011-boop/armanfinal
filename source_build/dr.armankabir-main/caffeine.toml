@@ -1,11 +1,9 @@
-manifest_version = "0.1.0"
+manifest_version = "1.0.0"
 
 [project]
-id = "php-mysql-frontend"
+id = "armanfinal-cpanel"
 name = "Dr. Arman Kabir Care"
-
-[workspace]
-include = ["src/**"]
-
-# This project is deployed to cPanel with PHP/MySQL.
-# No ICP canisters or Caffeine runtime are used.
+platform = "cPanel"
+frontend = "React"
+backend = "PHP REST API"
+database = "MySQL"
